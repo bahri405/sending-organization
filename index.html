@@ -490,6 +490,7 @@
                                     <th>Dokumen</th>
                                     <th>Ijin Tinggal</th>
                                     <th>Keberangkatan</th>
+                                    <th>Issued Passport</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -725,10 +726,10 @@
         ];
 
         let sendingData = [
-            {id: 1, nama: "Andi", job: "welder", lokasi: "tokyo", interview: "2024-01-15", kontrak: "2024-02-01", dokumen: "Lengkap 2026-01-20", ijin: "Sudah 2026-01-20", keberangkatan: "2024-03-15", status: "Berangkat"},
-            {id: 2, nama: "Siti", job: "welder", lokasi: "osaka", interview: "2024-01-15", kontrak: "2024-02-01", dokumen: "Lengkap 2026-01-13", ijin: "Sudah 2026-01-13", keberangkatan: "2024-03-15", status: "Berangkat"},
-            {id: 3, nama: "Dewi Lestari", job: "caregiver", lokasi: "osaka", interview: "2024-02-10", kontrak: "2024-02-25", dokumen: "Belum Lengkap 2026-02-10", ijin: "Proses 2026-02-10", keberangkatan: "", status: "Proses"},
-            {id: 4, nama: "Gunawan Susilo", job: "caregiver", lokasi: "tokyo", interview: "2024-02-10", kontrak: "2024-02-25", dokumen: "Belum Lengkap 2026-01-10", ijin: "Belum 2026-01-10", keberangkatan: "", status: "Proses"}
+            {id: 1, nama: "Andi", job: "welder", lokasi: "tokyo", interview: "2024-01-15", kontrak: "2024-02-01", dokumen: "Lengkap 2026-01-20", ijin: "Sudah 2026-01-20", keberangkatan: "2024-03-15", issuedpassport: "2026-01-13", status: "Berangkat"},
+            {id: 2, nama: "Siti", job: "welder", lokasi: "osaka", interview: "2024-01-15", kontrak: "2024-02-01", dokumen: "Lengkap 2026-01-13", ijin: "Sudah 2026-01-13", keberangkatan: "2024-03-15", issuedpassport: "2026-01-13", status: "Berangkat"},
+            {id: 3, nama: "Dewi Lestari", job: "caregiver", lokasi: "osaka", interview: "2024-02-10", kontrak: "2024-02-25", dokumen: "Belum Lengkap 2026-02-10", ijin: "Proses 2026-02-10", keberangkatan: "", issuedpassport: "2026-01-13", status: "Proses"},
+            {id: 4, nama: "Gunawan Susilo", job: "caregiver", lokasi: "tokyo", interview: "2024-02-10", kontrak: "2024-02-25", dokumen: "Belum Lengkap 2026-01-10", ijin: "Belum 2026-01-10", keberangkatan: "", issuedpassport: "2026-01-13", status: "Proses"}
         ];
 
         let nextPesertaId = 9;
@@ -949,6 +950,7 @@
                         <td><span class="badge ${s.dokumen === 'Lengkap' ? 'badge-success' : 'badge-warning'}">${s.dokumen}</span></td>
                         <td><span class="badge ${s.ijin === 'Sudah' ? 'badge-success' : 'badge-warning'}">${s.ijin}</span></td>
                         <td>${s.keberangkatan || '-'}</td>
+                        <td>${s.issuedpassport}</td>
                         <td><span class="badge ${statusBadge}">${s.status}</span></td>
                         <td>
                             <button class="btn btn-warning btn-sm" onclick="editSending(${s.id})">Edit</button>
